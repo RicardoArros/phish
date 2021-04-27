@@ -1,0 +1,179 @@
+:local(.jumpingFishCtn) {
+  :local(.fish__img) {
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+:local(.modal) {
+
+  .modal__backdrop {
+    position: fixed;
+    top:0;
+    left:0;
+    display: grid;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, .2);
+    background: #fff;
+    z-index: 99;
+
+    .modal__container {
+      display: grid;
+      /* grid-template: repeat(3, 1fr) / 1fr; */
+      grid-template: repeat(3, minmax(min-content, auto) ) / 1fr auto;
+      row-gap: 2rem;
+      background: #fff;
+      width: 50%;
+      padding: 1.8em;
+      border-radius: 12px;
+      margin: auto;
+
+      .modal__header {
+        display: grid;
+        grid-template: 1fr / 1fr min-content;
+
+        .modal__title {
+          grid-column: 1;
+          text-align: center;
+          color: rgb(90, 170, 90);
+          font-size: 1.4em;
+          font-weight: 700;
+        }
+
+        .modal__titleWin {
+          grid-column: 1;
+          text-align: center;
+          color: rgb(90, 170, 90);
+          font-size: 1.8em;
+          font-weight: 700;
+        }
+
+        .closeModalFish {
+          grid-column: 2;
+          height: fit-content;
+          padding: 5px 8px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+
+      :local(.modal__body) {
+        grid-column: 1 ;
+        grid-row: 2;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: rgb(97, 97, 97);
+
+        :local(.modal__disclaimerParagraph) {
+          text-align: center;
+          font-size: .8em;
+          margin: 1rem 0;
+        }
+      }
+
+      :local(.modal__footer) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column: 1 ;
+        grid-row: 3;
+
+        .modal__footerBtn {
+          display: inline-block;
+          background-color: #53a318;
+          padding: 9px 0;
+          border: 1px solid #53a318;
+          border-radius: 28px;
+
+          color: #fff;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 640px) {
+
+    :local(.modal__backdrop) {
+      display: grid;
+      align-content: end;
+
+      .modal__container {
+        row-gap: 1.4rem;
+        width: 85%;
+        padding: 1em 1.3em;
+        margin-bottom: 7rem;
+
+        .modal__header {
+          display: grid;
+          grid-template-columns: 1fr;
+
+          .modal__title {
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 1.3em;
+            padding: 0 1rem;
+          }
+
+          .closeModalFish {
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: end;
+          }
+        }
+
+        .modal__body {
+          font-size: .9em;
+
+          :local(.modal__disclaimerParagraph) {
+            font-size: .7em;
+            margin: 1rem 0 .5rem 0;
+          }
+        }
+
+        .modal__footer {
+
+          .modal__footerBtn {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+:local(.fishCount) {
+  position: fixed;
+  bottom: 3%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  fill: #fff;
+  z-index: 99;
+
+  .fish__img, .fish__img2 {
+    background-image: url(./peixe-green-bg.svg);
+    width: 2.3em;
+    margin-right: .8em;
+    max-height: 19px;
+  }
+
+  :local(.fish__img2) {
+    opacity: 0.3;
+  }
+
+  @media (max-width: 640px) {
+
+    :local(.fishCount) {
+      justify-content: center;
+
+      .fish__img, .fish__img2 {
+        width: 1.5em;
+        margin-right: .6em;
+      }
+    }
+  }
+}

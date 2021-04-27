@@ -1,0 +1,70 @@
+:local(.brandCard) {
+    display: grid;
+    grid-template: 1fr / 96px 1fr;
+    height:96px;
+    column-gap: 10px;
+    align-items: center;
+
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 100%;
+    /* max-width: 285px; */
+    /* max-height: 110px; */
+
+    min-width: max-content;
+
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    &:hover {
+        text-decoration: none;
+    }
+    :local(.brandCard__image){
+        background:red;
+        width: 100%;
+        height: 100%;
+        
+    }
+    :local(.brandCard__image img) {
+        width: 100%;
+        height: 100%;
+    }
+
+    :local(.brandCard__title) {
+        color: #333333;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    :local(.brandCard__body) {
+
+    }
+
+    :local(.brandCard__category) {
+        color: #999999;
+        font-size: 12px;
+        font-weight: 500;
+
+        margin-top: 6px;
+        margin-bottom: 12px;
+    }
+
+    :local(.brandCard__address) {
+        color: #666;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+
+
+        :local(.brandCard__icon) {
+            font-size: 15px;
+            margin-right: 5px;
+            color: #53A318;
+        }
+    }
+
+}
+
+
+
